@@ -127,16 +127,16 @@ class _HomeState extends State<Home> {
           body: Column(
         children: [
           Expanded(
-              flex: 2,
+              flex: 3,
               child: Container(
                 color: Colors.blue,
                 child: Stack(
                   children: [
-                   Bird(
-                          birdHeight: birdHeight,
-                          birdWidth: birdWidth,
-                          birdY: birdLocation,
-                        ),
+                    Bird(
+                      birdHeight: birdHeight,
+                      birdWidth: birdWidth,
+                      birdY: birdLocation,
+                    ),
                     Container(
                       alignment: Alignment(0, -0.3),
                       child: hasStarted
@@ -182,40 +182,14 @@ class _HomeState extends State<Home> {
             child: Container(
                 //padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Padding(
-                  padding: const EdgeInsets.all(100.0),
+                  padding: const EdgeInsets.only(top: 10, left : 60),
                   child: Row(
                     children: [
-                      Column(
-                        children: [
-                          Text("Score",
-                              style: GoogleFonts.roboto(
-                                  fontSize: 30,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500)),
-                          Text("0",
-                              style: GoogleFonts.roboto(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500)),
-                        ],
-                      ),
-                      SizedBox(
-                        width: size.width * 0.1,
-                      ),
-                      Column(
-                        children: [
-                          Text("Best",
-                              style: GoogleFonts.roboto(
-                                  fontSize: 30,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500)),
-                          Text("0",
-                              style: GoogleFonts.roboto(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500)),
-                        ],
-                      ),
+                      Text("Made By Emilio ",
+                          style: GoogleFonts.roboto(
+                              fontSize: 30,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500)),
                     ],
                   ),
                 ),
