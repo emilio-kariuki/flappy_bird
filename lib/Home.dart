@@ -50,7 +50,7 @@ class _HomeState extends State<Home> {
           barrierXTwo -= 0.05;
         }
       });
-      if (birdLocation > 1) {
+      if (birdLocation > 1 || birdLocation < -1) {
         timer.cancel();
         hasStarted = false;
       }
