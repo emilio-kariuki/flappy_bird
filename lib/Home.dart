@@ -24,6 +24,9 @@ class _HomeState extends State<Home> {
       setState(() {
         birdLocation = initialHeight - height;
       });
+      if (birdLocation > 1) {
+        timer.cancel();
+      }
     });
   }
 
