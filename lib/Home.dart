@@ -21,6 +21,13 @@ class _HomeState extends State<Home> {
   static double barrierXOne = 1;
   double barrierXTwo = barrierXOne + 1.5;
 
+  static List<double> barrierX = [2, 2 + 1.5];
+  static double barrierWidth = 0.5;
+  List<List<double>> barrierHeight = [
+    [0.6,0.4],
+    [0.4,0.6]
+    ];
+
   void jump() {
     setState(() {
       time = 0;
@@ -130,22 +137,42 @@ class _HomeState extends State<Home> {
                   AnimatedContainer(
                     alignment: Alignment(barrierXOne, 1.1),
                     duration: Duration(milliseconds: 0),
-                    child: Barrier(size: 200),
+                    child: Barrier(
+                      barrierX: barrierX[0],
+                      barrierWidth: barrierWidth,
+                      barrierHeight: barrierHeight[0][0],
+                      isBottomBarrier: false,
+                    ),
                   ),
                   AnimatedContainer(
                     alignment: Alignment(barrierXOne, -1.1),
                     duration: Duration(milliseconds: 0),
-                    child: Barrier(size: 200),
+                    child: Barrier(
+                      barrierX: barrierX[0],
+                      barrierWidth: barrierWidth,
+                      barrierHeight: barrierHeight[1][0],
+                      isBottomBarrier: true,
+                    ),
                   ),
                   AnimatedContainer(
                     alignment: Alignment(barrierXTwo, -1.1),
                     duration: Duration(milliseconds: 0),
-                    child: Barrier(size: 150),
+                    child: Barrier(
+                      barrierX: barrierX[1],
+                      barrierWidth: barrierWidth,
+                      barrierHeight: barrierHeight[1][1],
+                      isBottomBarrier: false,
+                    ),
                   ),
                   AnimatedContainer(
                     alignment: Alignment(barrierXTwo, 1.1),
                     duration: Duration(milliseconds: 0),
-                    child: Barrier(size: 250),
+                    child: Barrier(
+                      barrierX: barrierX[1],
+                      barrierWidth: barrierWidth,
+                      barrierHeight: barrierHeight[0][1],
+                      isBottomBarrier: true,
+                    ),
                   )
                 ],
               )),
