@@ -50,7 +50,7 @@ class _HomeState extends State<Home> {
   void startGame() {
     hasStarted = true;
     Timer.periodic(Duration(milliseconds: 50), (timer) {
-      time += 0.04;
+      
       height = -4.9 * time * time + 2 * time;
       setState(() {
         birdLocation = initialHeight - height;
@@ -74,6 +74,7 @@ class _HomeState extends State<Home> {
         hasStarted = false;
         showingDialog();
       }
+      time += 0.01;
     });
   }
    void jump() {
