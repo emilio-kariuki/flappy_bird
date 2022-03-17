@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flappy_bird/Bird.dart';
+import 'package:flappy_bird/barrier.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -77,7 +78,8 @@ class _HomeState extends State<Home> {
                 ),
                 AnimatedContainer(
                   alignment: Alignment(0,0.3),
-                  duration: Duration(milliseconds: 0)
+                  duration: Duration(milliseconds: 0),
+                  child: Barrier(size: 100),
                 )
               ],
             )),
