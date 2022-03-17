@@ -11,13 +11,17 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  double birdLocation = 0;
+  static double birdLocation = 0;
   double time = 0;
-  double initialHeight = 0;
+  double initialHeight = birdLocation;
   double height = 0;
 
   void jump() {
-    initialHeight = birdLocation;
+    setState(() {
+      
+    });
+  }
+  void startGame(){
     Timer.periodic(Duration(milliseconds: 500), (timer) {
       time += 0.04;
       height = -4.9 * time * time + 2 * time;
