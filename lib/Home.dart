@@ -18,8 +18,8 @@ class _HomeState extends State<Home> {
   double initialHeight = birdLocation;
   double height = 0;
   bool hasStarted = false;
-  double barrierXOne = 0;
-  double barrierXTwo = 1;
+  static double barrierXOne = 0;
+  double barrierXTwo = barrierXOne + 2;
 
   void jump() {
     setState(() {
