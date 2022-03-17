@@ -45,107 +45,106 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-        body: SafeArea(
-            child: Column(
+        body: Column(
       children: [
         Expanded(
-            flex: 2,
-            child: Stack(
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    if (hasStarted) {
-                      jump();
-                    } else {
-                      startGame();
-                    }
-                  },
-                  child: AnimatedContainer(
-                      duration: Duration(microseconds: 0),
-                      alignment: Alignment(0, birdLocation),
-                      child: Bird(),
-                      color: Color.fromARGB(255, 17, 139, 240)),
-                ),
-                Container(
-                  alignment: Alignment(0, -0.3),
-                  child: hasStarted
-                      ? Text(" ")
-                      : Text("  T A P  T O  P L A Y ",
-                          style: GoogleFonts.redressed(
-                              fontSize: 25,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600)),
-                ),
-                AnimatedContainer(
-                  alignment: Alignment(0,1.1),
-                  duration: Duration(milliseconds: 0),
-                  child: Barrier(size: 200),
-                ),
-                AnimatedContainer(
-                  alignment: Alignment(0,-1.1),
-                  duration: Duration(milliseconds: 0),
-                  child: Barrier(size: 200),
-                ),
-                AnimatedContainer(
-                  alignment: Alignment(0.5,-1.1),
-                  duration: Duration(milliseconds: 0),
-                  child: Barrier(size: 150),
-                ),
-                AnimatedContainer(
-                  alignment: Alignment(0.5,1.1),
-                  duration: Duration(milliseconds: 0),
-                  child: Barrier(size: 250),
-                )
-              ],
-            )),
+        flex: 2,
+        child: Stack(
+          children: [
+            GestureDetector(
+              onTap: () {
+                if (hasStarted) {
+                  jump();
+                } else {
+                  startGame();
+                }
+              },
+              child: AnimatedContainer(
+                  duration: Duration(microseconds: 0),
+                  alignment: Alignment(0, birdLocation),
+                  child: Bird(),
+                  color: Color.fromARGB(255, 17, 139, 240)),
+            ),
+            Container(
+              alignment: Alignment(0, -0.3),
+              child: hasStarted
+                  ? Text(" ")
+                  : Text("  T A P  T O  P L A Y ",
+                      style: GoogleFonts.redressed(
+                          fontSize: 25,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600)),
+            ),
+            AnimatedContainer(
+              alignment: Alignment(0,1.1),
+              duration: Duration(milliseconds: 0),
+              child: Barrier(size: 200),
+            ),
+            AnimatedContainer(
+              alignment: Alignment(0,-1.1),
+              duration: Duration(milliseconds: 0),
+              child: Barrier(size: 200),
+            ),
+            AnimatedContainer(
+              alignment: Alignment(1,-1.1),
+              duration: Duration(milliseconds: 0),
+              child: Barrier(size: 150),
+            ),
+            AnimatedContainer(
+              alignment: Alignment(1,1.1),
+              duration: Duration(milliseconds: 0),
+              child: Barrier(size: 250),
+            )
+          ],
+        )),
         Container(
           height: 15,
           color: Colors.green,
         ),
         Expanded(
           child: Container(
-              //padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Padding(
-                padding: const EdgeInsets.all(100.0),
-                child: Row(
+          //padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Padding(
+            padding: const EdgeInsets.all(100.0),
+            child: Row(
+              children: [
+                Column(
                   children: [
-                    Column(
-                      children: [
-                        Text("Score",
-                            style: GoogleFonts.roboto(
-                                fontSize: 30,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500)),
-                        Text("0",
-                            style: GoogleFonts.roboto(
-                                fontSize: 20,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500)),
-                      ],
-                    ),
-                    SizedBox(
-                      width: size.width * 0.1,
-                    ),
-                    Column(
-                      children: [
-                        Text("Best",
-                            style: GoogleFonts.roboto(
-                                fontSize: 30,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500)),
-                        Text("0",
-                            style: GoogleFonts.roboto(
-                                fontSize: 20,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500)),
-                      ],
-                    ),
+                    Text("Score",
+                        style: GoogleFonts.roboto(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500)),
+                    Text("0",
+                        style: GoogleFonts.roboto(
+                            fontSize: 20,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500)),
                   ],
                 ),
-              ),
-              color: Color.fromARGB(255, 172, 121, 10)),
+                SizedBox(
+                  width: size.width * 0.1,
+                ),
+                Column(
+                  children: [
+                    Text("Best",
+                        style: GoogleFonts.roboto(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500)),
+                    Text("0",
+                        style: GoogleFonts.roboto(
+                            fontSize: 20,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500)),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          color: Color.fromARGB(255, 172, 121, 10)),
         )
       ],
-    )));
+    ));
   }
 }
