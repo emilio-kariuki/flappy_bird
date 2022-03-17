@@ -37,15 +37,15 @@ class _HomeState extends State<Home> {
         birdLocation = initialHeight - height;
       });
       setState(() {
-        if (barrierXOne < -1.1) {
-          barrierXOne += 2.2;
+        if (barrierXOne < -2) {
+          barrierXOne += 3.5;
         } else {
           barrierXOne -= 0.05;
         }
       });
       setState(() {
-        if (barrierXTwo < -1.1) {
-          barrierXTwo += 2.2;
+        if (barrierXTwo < -2) {
+          barrierXTwo += 3.5;
         } else {
           barrierXTwo -= 0.05;
         }
