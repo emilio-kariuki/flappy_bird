@@ -48,107 +48,107 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Scaffold(
-        body: Column(
-      children: [
-        Expanded(
-            flex: 2,
-            child: Stack(
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    if (hasStarted) {
-                      jump();
-                    } else {
-                      startGame();
-                    }
-                  },
-                  child: AnimatedContainer(
+    return GestureDetector(
+      onTap: () {
+        if (hasStarted) {
+          jump();
+        } else {
+          startGame();
+        }
+      },
+      child: Scaffold(
+          body: Column(
+        children: [
+          Expanded(
+              flex: 2,
+              child: Stack(
+                children: [
+                  AnimatedContainer(
                       duration: Duration(microseconds: 0),
                       alignment: Alignment(0, birdLocation),
                       child: Bird(),
                       color: Color.fromARGB(255, 17, 139, 240)),
-                ),
-                Container(
-                  alignment: Alignment(0, -0.3),
-                  child: hasStarted
-                      ? Text(" ")
-                      : Text("  T A P  T O  P L A Y ",
-                          style: GoogleFonts.redressed(
-                              fontSize: 25,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600)),
-                ),
-                AnimatedContainer(
-                  alignment: Alignment(barrierXOne, 1.1),
-                  duration: Duration(milliseconds: 0),
-                  child: Barrier(size: 200),
-                ),
-                AnimatedContainer(
-                  alignment: Alignment(barrierXOne, -1.1),
-                  duration: Duration(milliseconds: 0),
-                  child: Barrier(size: 200),
-                ),
-                AnimatedContainer(
-                  alignment: Alignment(barrierXTwo, -1.1),
-                  duration: Duration(milliseconds: 0),
-                  child: Barrier(size: 150),
-                ),
-                AnimatedContainer(
-                  alignment: Alignment(barrierXTwo, 1.1),
-                  duration: Duration(milliseconds: 0),
-                  child: Barrier(size: 250),
-                )
-              ],
-            )),
-        Container(
-          height: 15,
-          color: Colors.green,
-        ),
-        Expanded(
-          child: Container(
-              //padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Padding(
-                padding: const EdgeInsets.all(100.0),
-                child: Row(
-                  children: [
-                    Column(
-                      children: [
-                        Text("Score",
-                            style: GoogleFonts.roboto(
-                                fontSize: 30,
+                  Container(
+                    alignment: Alignment(0, -0.3),
+                    child: hasStarted
+                        ? Text(" ")
+                        : Text("  T A P  T O  P L A Y ",
+                            style: GoogleFonts.redressed(
+                                fontSize: 25,
                                 color: Colors.white,
-                                fontWeight: FontWeight.w500)),
-                        Text("0",
-                            style: GoogleFonts.roboto(
-                                fontSize: 20,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500)),
-                      ],
-                    ),
-                    SizedBox(
-                      width: size.width * 0.1,
-                    ),
-                    Column(
-                      children: [
-                        Text("Best",
-                            style: GoogleFonts.roboto(
-                                fontSize: 30,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500)),
-                        Text("0",
-                            style: GoogleFonts.roboto(
-                                fontSize: 20,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500)),
-                      ],
-                    ),
-                  ],
+                                fontWeight: FontWeight.w600)),
+                  ),
+                  AnimatedContainer(
+                    alignment: Alignment(barrierXOne, 1.1),
+                    duration: Duration(milliseconds: 0),
+                    child: Barrier(size: 200),
+                  ),
+                  AnimatedContainer(
+                    alignment: Alignment(barrierXOne, -1.1),
+                    duration: Duration(milliseconds: 0),
+                    child: Barrier(size: 200),
+                  ),
+                  AnimatedContainer(
+                    alignment: Alignment(barrierXTwo, -1.1),
+                    duration: Duration(milliseconds: 0),
+                    child: Barrier(size: 150),
+                  ),
+                  AnimatedContainer(
+                    alignment: Alignment(barrierXTwo, 1.1),
+                    duration: Duration(milliseconds: 0),
+                    child: Barrier(size: 250),
+                  )
+                ],
+              )),
+          Container(
+            height: 15,
+            color: Colors.green,
+          ),
+          Expanded(
+            child: Container(
+                //padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Padding(
+                  padding: const EdgeInsets.all(100.0),
+                  child: Row(
+                    children: [
+                      Column(
+                        children: [
+                          Text("Score",
+                              style: GoogleFonts.roboto(
+                                  fontSize: 30,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500)),
+                          Text("0",
+                              style: GoogleFonts.roboto(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500)),
+                        ],
+                      ),
+                      SizedBox(
+                        width: size.width * 0.1,
+                      ),
+                      Column(
+                        children: [
+                          Text("Best",
+                              style: GoogleFonts.roboto(
+                                  fontSize: 30,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500)),
+                          Text("0",
+                              style: GoogleFonts.roboto(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500)),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              color: Color.fromARGB(255, 172, 121, 10)),
-        )
-      ],
-    ));
+                color: Color.fromARGB(255, 172, 121, 10)),
+          )
+        ],
+      )),
+    );
   }
 }
