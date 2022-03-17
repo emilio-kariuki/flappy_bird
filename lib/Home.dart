@@ -130,15 +130,11 @@ class _HomeState extends State<Home> {
               flex: 2,
               child: Stack(
                 children: [
-                  AnimatedContainer(
-                      duration: Duration(microseconds: 0),
-                      alignment: Alignment(0, birdLocation),
-                      child: Bird(
+                 Bird(
                         birdHeight: birdHeight,
                         birdWidth: birdWidth,
                         birdY: birdLocation,
                       ),
-                      color: Color.fromARGB(255, 17, 139, 240)),
                   Container(
                     alignment: Alignment(0, -0.3),
                     child: hasStarted
@@ -149,45 +145,29 @@ class _HomeState extends State<Home> {
                                 color: Colors.white,
                                 fontWeight: FontWeight.w600)),
                   ),
-                  AnimatedContainer(
-                    alignment: Alignment(barrierXOne, 1.1),
-                    duration: Duration(milliseconds: 0),
-                    child: Barrier(
-                      barrierX: barrierX[0],
-                      barrierWidth: barrierWidth,
-                      barrierHeight: barrierHeight[0][0],
-                      isBottomBarrier: false,
-                    ),
+                  Barrier(
+                    barrierX: barrierX[0],
+                    barrierWidth: barrierWidth,
+                    barrierHeight: barrierHeight[0][0],
+                    isBottomBarrier: false,
                   ),
-                  AnimatedContainer(
-                    alignment: Alignment(barrierXOne, -1.1),
-                    duration: Duration(milliseconds: 0),
-                    child: Barrier(
-                      barrierX: barrierX[0],
-                      barrierWidth: barrierWidth,
-                      barrierHeight: barrierHeight[1][0],
-                      isBottomBarrier: true,
-                    ),
+                  Barrier(
+                    barrierX: barrierX[0],
+                    barrierWidth: barrierWidth,
+                    barrierHeight: barrierHeight[1][0],
+                    isBottomBarrier: true,
                   ),
-                  AnimatedContainer(
-                    alignment: Alignment(barrierXTwo, -1.1),
-                    duration: Duration(milliseconds: 0),
-                    child: Barrier(
-                      barrierX: barrierX[1],
-                      barrierWidth: barrierWidth,
-                      barrierHeight: barrierHeight[1][1],
-                      isBottomBarrier: false,
-                    ),
+                  Barrier(
+                    barrierX: barrierX[1],
+                    barrierWidth: barrierWidth,
+                    barrierHeight: barrierHeight[1][1],
+                    isBottomBarrier: false,
                   ),
-                  AnimatedContainer(
-                    alignment: Alignment(barrierXTwo, 1.1),
-                    duration: Duration(milliseconds: 0),
-                    child: Barrier(
-                      barrierX: barrierX[1],
-                      barrierWidth: barrierWidth,
-                      barrierHeight: barrierHeight[0][1],
-                      isBottomBarrier: true,
-                    ),
+                  Barrier(
+                    barrierX: barrierX[1],
+                    barrierWidth: barrierWidth,
+                    barrierHeight: barrierHeight[0][1],
+                    isBottomBarrier: true,
                   )
                 ],
               )),
