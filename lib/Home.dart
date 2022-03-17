@@ -22,6 +22,7 @@ class _HomeState extends State<Home> {
   }
 
   void startGame() {
+    hasStarted = true;
     Timer.periodic(Duration(milliseconds: 500), (timer) {
       time += 0.04;
       height = -4.9 * time * time + 2 * time;
@@ -30,6 +31,7 @@ class _HomeState extends State<Home> {
       });
       if (birdLocation > 1) {
         timer.cancel();
+        hasStarted = false;
       }
     });
   }
@@ -43,7 +45,13 @@ class _HomeState extends State<Home> {
         Expanded(
           flex: 2,
           child: GestureDetector(
-            onTap: jump,
+            onTap: () {
+              if (hasStarted) {
+                jump();
+              } else {
+                startGame();
+              }
+            },
             child: AnimatedContainer(
                 duration: Duration(microseconds: 0),
                 alignment: Alignment(0, birdLocation),
