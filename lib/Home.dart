@@ -26,7 +26,7 @@ class _HomeState extends State<Home> {
 
   void startGame() {
     hasStarted = true;
-    Timer.periodic(Duration(milliseconds: 500), (timer) {
+    Timer.periodic(Duration(milliseconds: 50), (timer) {
       time += 0.04;
       height = -4.9 * time * time + 2 * time;
       setState(() {
