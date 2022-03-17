@@ -67,11 +67,13 @@ class _HomeState extends State<Home> {
                 ),
                 Container(
                   alignment: Alignment(0, -0.3),
-                  child: Text("  T A P  T O  P L A Y ",
-                      style: GoogleFonts.redressed(
-                          fontSize: 25,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600)),
+                  child: hasStarted
+                      ? Text(" ")
+                      : Text("  T A P  T O  P L A Y ",
+                          style: GoogleFonts.redressed(
+                              fontSize: 25,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600)),
                 ),
               ],
             )),
