@@ -15,13 +15,13 @@ class _HomeState extends State<Home> {
   double time = 0;
   double initialHeight = birdLocation;
   double height = 0;
+  bool hasStarted = false;
 
   void jump() {
-    setState(() {
-      
-    });
+    setState(() {});
   }
-  void startGame(){
+
+  void startGame() {
     Timer.periodic(Duration(milliseconds: 500), (timer) {
       time += 0.04;
       height = -4.9 * time * time + 2 * time;
