@@ -168,7 +168,7 @@ class _HomeState extends State<Home> {
             child: Container(
                 //padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 10, left : 60),
+                  padding: const EdgeInsets.only(top: 10, left : 70),
                   child: Row(
                     children: [
                       Text("Made By Emilio ",
