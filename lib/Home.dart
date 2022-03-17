@@ -30,6 +30,21 @@ class _HomeState extends State<Home> {
     [0.4, 0.6]
   ];
 
+   bool birdIsDead() {
+    if (birdLocation > 1 || birdLocation < -1) {
+      return true;
+    }
+    for (int t = 0; t < barrierX.length; t++) {
+      if (barrierX[t] <= birdWidth &&
+          barrierX[t] + barrierWidth >= -birdWidth &&
+          (birdLocation <= -1 + barrierHeight[t][0] ||
+              birdLocation + birdHeight >= 1 - barrierHeight[t][1])) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   void jump() {
     setState(() {
       time = 0;
@@ -67,20 +82,7 @@ class _HomeState extends State<Home> {
     });
   }
 
-  bool birdIsDead() {
-    if (birdLocation > 1 || birdLocation < -1) {
-      return true;
-    }
-    for (int t = 0; t < barrierX.length; t++) {
-      if (barrierX[t] <= birdWidth &&
-          barrierX[t] + barrierWidth >= -birdWidth &&
-          (birdLocation <= -1 + barrierHeight[t][0] ||
-              birdLocation + birdHeight >= 1 - barrierHeight[t][1])) {
-        return true;
-      }
-    }
-    return false;
-  }
+ 
 
   void resetGame() {
     Navigator.pop(context);
