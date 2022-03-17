@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
   static double barrierXOne = 1;
   double barrierXTwo = barrierXOne + 1.5;
 
-  static List<double> barrierX = [2, 2 + 1.5];
+  static List<double> barrierX = [2, 3.5];
   static double barrierWidth = 0.5;
   List<List<double>> barrierHeight = [
     [0.6, 0.4],
