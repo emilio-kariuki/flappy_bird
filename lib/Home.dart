@@ -142,19 +142,19 @@ class _HomeState extends State<Home> {
                     Barrier(
                       barrierX: barrierX[0],
                       barrierWidth: barrierWidth,
-                      barrierHeight: barrierHeight[1][0],
+                      barrierHeight: barrierHeight[0][1],
                       isBottomBarrier: true,
                     ),
                     Barrier(
                       barrierX: barrierX[1],
                       barrierWidth: barrierWidth,
-                      barrierHeight: barrierHeight[1][1],
+                      barrierHeight: barrierHeight[1][0],
                       isBottomBarrier: false,
                     ),
                     Barrier(
                       barrierX: barrierX[1],
                       barrierWidth: barrierWidth,
-                      barrierHeight: barrierHeight[0][1],
+                      barrierHeight: barrierHeight[1][1],
                       isBottomBarrier: true,
                     )
                   ],
