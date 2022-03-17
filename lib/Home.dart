@@ -35,10 +35,10 @@ class _HomeState extends State<Home> {
       height = -4.9 * time * time + 2 * time;
       setState(() {
         birdLocation = initialHeight - height;
-      });
-      if (birdLocation > 1) {
         barrierXOne -= 0.05;
         barrierXTwo -= 0.05;
+      });
+      if (birdLocation > 1) {
         timer.cancel();
         hasStarted = false;
       }
