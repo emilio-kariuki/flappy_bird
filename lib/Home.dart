@@ -139,7 +139,11 @@ class _HomeState extends State<Home> {
                   AnimatedContainer(
                       duration: Duration(microseconds: 0),
                       alignment: Alignment(0, birdLocation),
-                      child: Bird(),
+                      child: Bird(
+                        birdHeight: birdHeight,
+                        birdWidth:birdWidth,
+                        birdY: birdLocation,
+                      ),
                       color: Color.fromARGB(255, 17, 139, 240)),
                   Container(
                     alignment: Alignment(0, -0.3),
