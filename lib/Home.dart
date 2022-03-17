@@ -64,10 +64,6 @@ class _HomeState extends State<Home> {
         hasStarted = false;
         showingDialog();
       }
-
-      showingDialog();
-      timer.cancel();
-      hasStarted = false;
     });
   }
 
