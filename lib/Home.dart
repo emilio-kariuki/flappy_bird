@@ -77,7 +77,7 @@ class _HomeState extends State<Home> {
                               fontWeight: FontWeight.w600)),
                 ),
                 AnimatedContainer(
-                  alignment: Alignment(0,0.3),
+                  alignment: Alignment(0,1),
                   duration: Duration(milliseconds: 0),
                   child: Barrier(size: 200),
                 )
