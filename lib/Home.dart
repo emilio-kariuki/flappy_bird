@@ -30,7 +30,7 @@ class _HomeState extends State<Home> {
     [0.4, 0.6]
   ];
 
-   bool birdIsDead() {
+  bool birdIsDead() {
     if (birdLocation > 1 || birdLocation < -1) {
       return true;
     }
@@ -45,12 +45,9 @@ class _HomeState extends State<Home> {
     return false;
   }
 
- 
-
   void startGame() {
     hasStarted = true;
     Timer.periodic(Duration(milliseconds: 50), (timer) {
-      
       height = -4.9 * time * time + 2 * time;
       setState(() {
         birdLocation = initialHeight - height;
@@ -77,14 +74,13 @@ class _HomeState extends State<Home> {
       time += 0.03;
     });
   }
-   void jump() {
+
+  void jump() {
     setState(() {
       time = 0;
       initialHeight = birdLocation;
     });
   }
-
- 
 
   void resetGame() {
     Navigator.pop(context);
@@ -139,7 +135,7 @@ class _HomeState extends State<Home> {
                       alignment: Alignment(0, birdLocation),
                       child: Bird(
                         birdHeight: birdHeight,
-                        birdWidth:birdWidth,
+                        birdWidth: birdWidth,
                         birdY: birdLocation,
                       ),
                       color: Color.fromARGB(255, 17, 139, 240)),
