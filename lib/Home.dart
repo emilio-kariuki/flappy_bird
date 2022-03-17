@@ -45,12 +45,7 @@ class _HomeState extends State<Home> {
     return false;
   }
 
-  void jump() {
-    setState(() {
-      time = 0;
-      initialHeight = birdLocation;
-    });
-  }
+ 
 
   void startGame() {
     hasStarted = true;
@@ -79,6 +74,12 @@ class _HomeState extends State<Home> {
         hasStarted = false;
         showingDialog();
       }
+    });
+  }
+   void jump() {
+    setState(() {
+      time = 0;
+      initialHeight = birdLocation;
     });
   }
 
