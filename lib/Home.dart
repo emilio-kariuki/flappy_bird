@@ -123,16 +123,16 @@ class _HomeState extends State<Home> {
                       birdWidth: birdWidth,
                       birdY: birdLocation,
                     ),
-                    Container(
-                      alignment: Alignment(0, -0.3),
-                      child: hasStarted
-                          ? Text(" ")
-                          : Text("  T A P  T O  P L A Y ",
-                              style: GoogleFonts.redressed(
-                                  fontSize: 25,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600)),
-                    ),
+                    // Container(
+                    //   alignment: Alignment(0, -0.3),
+                    //   child: hasStarted
+                    //       ? Text(" ")
+                    //       : Text("  T A P  T O  P L A Y ",
+                    //           style: GoogleFonts.redressed(
+                    //               fontSize: 25,
+                    //               color: Colors.white,
+                    //               fontWeight: FontWeight.w600)),
+                    // ),
                     Barrier(
                       barrierX: barrierX[0],
                       barrierWidth: barrierWidth,

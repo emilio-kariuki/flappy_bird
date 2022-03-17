@@ -23,8 +23,8 @@ class Barrier extends StatelessWidget {
             isBottomBarrier ? 1 : -1),
         child: Container(
           color: Colors.green,
-          width: 60,
-          height: 60,
+          width: size.width * barrierWidth / 2,
+          height: size.height * 3 / 4 * barrierHeight / 2,
         ));
   }
 }
