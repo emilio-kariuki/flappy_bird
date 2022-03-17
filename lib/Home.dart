@@ -75,6 +75,10 @@ class _HomeState extends State<Home> {
                               color: Colors.white,
                               fontWeight: FontWeight.w600)),
                 ),
+                AnimatedContainer(
+                  alignment: Alignment(0,0.3),
+                  duration: Duration(milliseconds: 0)
+                )
               ],
             )),
         Container(
