@@ -59,6 +59,11 @@ class _HomeState extends State<Home> {
           barrierXTwo -= 0.05;
         }
       });
+      if (birdIsDead()) {
+        timer.cancel();
+        hasStarted = false;
+        showingDialog();
+      }
 
       showingDialog();
       timer.cancel();
