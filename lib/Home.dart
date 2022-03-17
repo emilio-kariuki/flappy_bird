@@ -122,13 +122,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return GestureDetector(
-      onTap: () {
-        if (hasStarted) {
-          jump();
-        } else {
-          startGame();
-        }
-      },
+      onTap: hasStarted ? jump : startGame,
       child: Scaffold(
           body: Column(
         children: [
