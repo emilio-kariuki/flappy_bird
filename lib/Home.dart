@@ -18,7 +18,10 @@ class _HomeState extends State<Home> {
   bool hasStarted = false;
 
   void jump() {
-    setState(() {});
+    setState(() {
+      time = 0;
+      initialHeight = birdLocation;
+    });
   }
 
   void startGame() {
