@@ -79,7 +79,7 @@ class _HomeState extends State<Home> {
                 AnimatedContainer(
                   alignment: Alignment(0,0.3),
                   duration: Duration(milliseconds: 0),
-                  child: Barrier(size: 100),
+                  child: Barrier(size: 200),
                 )
               ],
             )),
