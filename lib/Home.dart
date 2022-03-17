@@ -67,14 +67,15 @@ class _HomeState extends State<Home> {
         Expanded(
           child: Container(
               //padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(100.0),
                 child: Row(
                   children: [
                     Column(
                       children: [
                         Text("Score",
                             style: GoogleFonts.roboto(
-                                fontSize: 26,
+                                fontSize: 30,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500)),
                         Text("0",
@@ -91,7 +92,7 @@ class _HomeState extends State<Home> {
                       children: [
                         Text("Best",
                             style: GoogleFonts.roboto(
-                                fontSize: 26,
+                                fontSize: 30,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500)),
                         Text("0",
