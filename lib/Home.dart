@@ -55,20 +55,20 @@ class _HomeState extends State<Home> {
       setState(() {
         birdLocation = initialHeight - height;
       });
-      setState(() {
-        if (barrierXOne < -2) {
-          barrierXOne += 3.5;
-        } else {
-          barrierXOne -= 0.05;
-        }
-      });
-      setState(() {
-        if (barrierXTwo < -2) {
-          barrierXTwo += 3.5;
-        } else {
-          barrierXTwo -= 0.05;
-        }
-      });
+      // setState(() {
+      //   if (barrierXOne < -2) {
+      //     barrierXOne += 3.5;
+      //   } else {
+      //     barrierXOne -= 0.05;
+      //   }
+      // });
+      // setState(() {
+      //   if (barrierXTwo < -2) {
+      //     barrierXTwo += 3.5;
+      //   } else {
+      //     barrierXTwo -= 0.05;
+      //   }
+      // });
       if (birdIsDead()) {
         timer.cancel();
         hasStarted = false;
