@@ -63,7 +63,7 @@ class _HomeState extends State<Home> {
                       duration: Duration(microseconds: 0),
                       alignment: Alignment(0, birdLocation),
                       child: Bird(),
-                      color: Color.fromARGB(255, 115, 14, 231)),
+                      color: Color.fromARGB(255, 17, 139, 240)),
                 ),
                 Container(
                   alignment: Alignment(0, -0.3),
