@@ -74,7 +74,7 @@ class _HomeState extends State<Home> {
         hasStarted = false;
         showingDialog();
       }
-      time += 0.01;
+      time += 0.03;
     });
   }
    void jump() {
