@@ -85,6 +85,16 @@ class _HomeState extends State<Home> {
                   alignment: Alignment(0,-1.1),
                   duration: Duration(milliseconds: 0),
                   child: Barrier(size: 200),
+                ),
+                AnimatedContainer(
+                  alignment: Alignment(0.5,-1.1),
+                  duration: Duration(milliseconds: 0),
+                  child: Barrier(size: 150),
+                ),
+                AnimatedContainer(
+                  alignment: Alignment(0.5,1.1),
+                  duration: Duration(milliseconds: 0),
+                  child: Barrier(size: 250),
                 )
               ],
             )),
