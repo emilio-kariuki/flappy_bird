@@ -64,6 +64,10 @@ class _HomeState extends State<Home> {
                 color: Color.fromARGB(255, 115, 14, 231)),
           ),
         ),
+        Container(
+          height: 15,
+          color: Colors.green,
+        ),
         Expanded(
           child: Container(
               //padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -86,7 +90,7 @@ class _HomeState extends State<Home> {
                       ],
                     ),
                     SizedBox(
-                      width: size.width * 0.08,
+                      width: size.width * 0.1,
                     ),
                     Column(
                       children: [
@@ -105,7 +109,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              color: Color.fromARGB(255, 10, 172, 72)),
+              color: Color.fromARGB(255, 172, 121, 10)),
         )
       ],
     )));
