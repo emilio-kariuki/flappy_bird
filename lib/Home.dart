@@ -47,18 +47,34 @@ class _HomeState extends State<Home> {
         body: SafeArea(
             child: Column(
       children: [
-         Expanded(
+        Expanded(
             flex: 2,
-            child: Stack()
-          ),
-          Container(
-            alignment: Alignment(0, -0.3),
-            child: Text("  T A P  T O  P L A Y ",
-                style: GoogleFonts.roboto(
-                    fontSize: 25,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500)),
-          ),
+            child: Stack(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    if (hasStarted) {
+                      jump();
+                    } else {
+                      startGame();
+                    }
+                  },
+                  child: AnimatedContainer(
+                      duration: Duration(microseconds: 0),
+                      alignment: Alignment(0, birdLocation),
+                      child: Bird(),
+                      color: Color.fromARGB(255, 115, 14, 231)),
+                ),
+                Container(
+                  alignment: Alignment(0, -0.3),
+                  child: Text("  T A P  T O  P L A Y ",
+                      style: GoogleFonts.redressed(
+                          fontSize: 25,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600)),
+                ),
+              ],
+            )),
         Container(
           height: 15,
           color: Colors.green,
