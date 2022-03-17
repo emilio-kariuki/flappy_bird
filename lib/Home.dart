@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flappy_bird/Bird.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -41,6 +42,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
         body: SafeArea(
             child: Column(
@@ -63,7 +65,46 @@ class _HomeState extends State<Home> {
           ),
         ),
         Expanded(
-          child: Container(color: Color.fromARGB(255, 10, 172, 72)),
+          child: Container(
+              //padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Center(
+                child: Row(
+                  children: [
+                    Column(
+                      children: [
+                        Text("Score",
+                            style: GoogleFonts.roboto(
+                                fontSize: 26,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500)),
+                        Text("0",
+                            style: GoogleFonts.roboto(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500)),
+                      ],
+                    ),
+                    SizedBox(
+                      width: size.width * 0.08,
+                    ),
+                    Column(
+                      children: [
+                        Text("Best",
+                            style: GoogleFonts.roboto(
+                                fontSize: 26,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500)),
+                        Text("0",
+                            style: GoogleFonts.roboto(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500)),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              color: Color.fromARGB(255, 10, 172, 72)),
         )
       ],
     )));
