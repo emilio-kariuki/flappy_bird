@@ -18,15 +18,17 @@ class _HomeState extends State<Home> {
   double initialHeight = birdLocation;
   double height = 0;
   bool hasStarted = false;
+  double birdWidth = 0.1;
+  double birdHeight = 0.1;
   static double barrierXOne = 1;
   double barrierXTwo = barrierXOne + 1.5;
 
   static List<double> barrierX = [2, 2 + 1.5];
   static double barrierWidth = 0.5;
   List<List<double>> barrierHeight = [
-    [0.6,0.4],
-    [0.4,0.6]
-    ];
+    [0.6, 0.4],
+    [0.4, 0.6]
+  ];
 
   void jump() {
     setState(() {
@@ -57,12 +59,26 @@ class _HomeState extends State<Home> {
           barrierXTwo -= 0.05;
         }
       });
-      if (birdLocation > 1 || birdLocation < -1) {
-        timer.cancel();
-        hasStarted = false;
-        showingDialog();
-      }
+
+      showingDialog();
+      timer.cancel();
+      hasStarted = false;
     });
+  }
+
+  bool birdIsDead() {
+    if (birdLocation > 1 || birdLocation < -1) {
+      return true;
+    }
+    for (int t = 0; t < barrierX.length; t++) {
+      if (barrierX[t] <= birdWidth &&
+          barrierX[t] + barrierWidth >= -birdWidth &&
+          (birdLocation <= -1 + barrierHeight[t][0] ||
+              birdLocation + birdHeight >= 1 - barrierHeight[t][1])) {
+        return true;
+      }
+    }
+    return false;
   }
 
   void resetGame() {
