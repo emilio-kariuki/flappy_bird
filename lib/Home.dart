@@ -128,48 +128,51 @@ class _HomeState extends State<Home> {
         children: [
           Expanded(
               flex: 2,
-              child: Stack(
-                children: [
-                 Bird(
-                        birdHeight: birdHeight,
-                        birdWidth: birdWidth,
-                        birdY: birdLocation,
-                      ),
-                  Container(
-                    alignment: Alignment(0, -0.3),
-                    child: hasStarted
-                        ? Text(" ")
-                        : Text("  T A P  T O  P L A Y ",
-                            style: GoogleFonts.redressed(
-                                fontSize: 25,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600)),
-                  ),
-                  Barrier(
-                    barrierX: barrierX[0],
-                    barrierWidth: barrierWidth,
-                    barrierHeight: barrierHeight[0][0],
-                    isBottomBarrier: false,
-                  ),
-                  Barrier(
-                    barrierX: barrierX[0],
-                    barrierWidth: barrierWidth,
-                    barrierHeight: barrierHeight[1][0],
-                    isBottomBarrier: true,
-                  ),
-                  Barrier(
-                    barrierX: barrierX[1],
-                    barrierWidth: barrierWidth,
-                    barrierHeight: barrierHeight[1][1],
-                    isBottomBarrier: false,
-                  ),
-                  Barrier(
-                    barrierX: barrierX[1],
-                    barrierWidth: barrierWidth,
-                    barrierHeight: barrierHeight[0][1],
-                    isBottomBarrier: true,
-                  )
-                ],
+              child: Container(
+                color: Colors.blue,
+                child: Stack(
+                  children: [
+                   Bird(
+                          birdHeight: birdHeight,
+                          birdWidth: birdWidth,
+                          birdY: birdLocation,
+                        ),
+                    Container(
+                      alignment: Alignment(0, -0.3),
+                      child: hasStarted
+                          ? Text(" ")
+                          : Text("  T A P  T O  P L A Y ",
+                              style: GoogleFonts.redressed(
+                                  fontSize: 25,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600)),
+                    ),
+                    Barrier(
+                      barrierX: barrierX[0],
+                      barrierWidth: barrierWidth,
+                      barrierHeight: barrierHeight[0][0],
+                      isBottomBarrier: false,
+                    ),
+                    Barrier(
+                      barrierX: barrierX[0],
+                      barrierWidth: barrierWidth,
+                      barrierHeight: barrierHeight[1][0],
+                      isBottomBarrier: true,
+                    ),
+                    Barrier(
+                      barrierX: barrierX[1],
+                      barrierWidth: barrierWidth,
+                      barrierHeight: barrierHeight[1][1],
+                      isBottomBarrier: false,
+                    ),
+                    Barrier(
+                      barrierX: barrierX[1],
+                      barrierWidth: barrierWidth,
+                      barrierHeight: barrierHeight[0][1],
+                      isBottomBarrier: true,
+                    )
+                  ],
+                ),
               )),
           Container(
             height: 15,
