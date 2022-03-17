@@ -53,8 +53,45 @@ class _HomeState extends State<Home> {
       if (birdLocation > 1 || birdLocation < -1) {
         timer.cancel();
         hasStarted = false;
+        showingDialog();
       }
     });
+  }
+
+  void resetGame() {
+    Navigator.pop(context);
+    setState(() {
+      birdLocation = 0;
+      hasStarted = false;
+      time = 0;
+      initialHeight = birdLocation;
+    });
+  }
+
+  void showingDialog() {
+    showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            backgroundColor: Color.fromARGB(255, 172, 121, 10),
+            title: Center(
+              child: Text("Game Over", style: TextStyle(color: Colors.white)),
+            ),
+            actions: [
+              GestureDetector(
+                  onTap: resetGame,
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(5),
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        color: Colors.white,
+                        child: Text("Play Again",
+                            style: TextStyle(color: Colors.orange)),
+                      )))
+            ],
+          );
+        });
   }
 
   @override
