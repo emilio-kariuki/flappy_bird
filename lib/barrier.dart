@@ -20,11 +20,11 @@ class Barrier extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return AnimatedContainer(
       duration: Duration(milliseconds: 0),
-        alignment: Alignment((2 * barrierX + barrierWidth) / (2 - barrierWidth),
-            isBottomBarrier ? 1 : -1),
-          color: Colors.green,
-          width: MediaQuery.of(context).size.width * barrierWidth / 2,
-          height: MediaQuery.of(context).size.height * 3 / 4 * barrierHeight / 2,
-        );
+      alignment: Alignment((2 * barrierX + barrierWidth) / (2 - barrierWidth),
+          isBottomBarrier ? 1 : -1),
+      color: Colors.green,
+      width: MediaQuery.of(context).size.width * barrierWidth / 2,
+      height: MediaQuery.of(context).size.height * 3 / 4 * barrierHeight / 2,
+    );
   }
 }
