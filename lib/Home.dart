@@ -20,8 +20,7 @@ class _HomeState extends State<Home> {
   bool hasStarted = false;
   double birdWidth = 0.1;
   double birdHeight = 0.1;
-  static double barrierXOne = 1;
-  double barrierXTwo = barrierXOne + 1.5;
+
   static double bXOne = 2;
   static double bXTwo = bXOne + 1.5;
 
@@ -56,7 +55,18 @@ class _HomeState extends State<Home> {
         birdLocation = initialHeight - height;
       });
       setState(() {
-        
+        if (bXOne < -1.1) {
+          bXOne += 2.2;
+        } else {
+          bXOne -= 0.05;
+        }
+      });
+      setState(() {
+        if (bXTwo < -1.1) {
+          bXTwo += 2.2;
+        } else {
+          bXTwo -= 0.05;
+        }
       });
       if (birdIsDead()) {
         timer.cancel();
