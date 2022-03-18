@@ -23,7 +23,7 @@ class Barrier extends StatelessWidget {
       alignment: Alignment((2 * barrierX + barrierWidth) / (2 - barrierWidth),
           isBottomBarrier ? 1 : -1),
       color: Colors.green,
-      width: MediaQuery.of(context).size.width * barrierWidth / 2,
+      width: 90,
       height: MediaQuery.of(context).size.height * 3 / 4 * barrierHeight / 2,
     );
   }
