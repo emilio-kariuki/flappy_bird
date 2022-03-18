@@ -53,6 +53,7 @@ class _HomeState extends State<Home> {
       height = -4.9 * time * time + 2 * time;
       setState(() {
         birdLocation = initialHeight - height;
+        bXOne -= 0.05;
       });
       if (birdIsDead()) {
         timer.cancel();
