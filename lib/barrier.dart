@@ -17,9 +17,9 @@ class Barrier extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
     return Container(
-        alignment: Alignment(3.5 / (2 - barrierWidth),
+        alignment: Alignment((2 ) / (2 - barrierWidth),
             isBottomBarrier ? 1 : -1),
         child: Container(
           color: Colors.green,
