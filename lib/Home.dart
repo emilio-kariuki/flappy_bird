@@ -22,8 +22,9 @@ class _HomeState extends State<Home> {
   double birdHeight = 0.1;
   static double barrierXOne = 1;
   double barrierXTwo = barrierXOne + 1.5;
+  static double bXOne = 2;
 
-  static List<double> barrierX = [2, 3.5];
+  static List<double> barrierX = [bXOne, 3.5];
   static double barrierWidth = 0.5;
   List<List<double>> barrierHeight = [
     [0.6, 0.4],
@@ -48,7 +49,7 @@ class _HomeState extends State<Home> {
   void startGame() {
     hasStarted = true;
     Timer.periodic(Duration(milliseconds: 50), (timer) {
-       time += 0.03;
+      time += 0.03;
       height = -4.9 * time * time + 2 * time;
       setState(() {
         birdLocation = initialHeight - height;
@@ -168,7 +169,7 @@ class _HomeState extends State<Home> {
             child: Container(
                 //padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 10, left : 70),
+                  padding: const EdgeInsets.only(top: 10, left: 70),
                   child: Row(
                     children: [
                       Text("Made By Emilio ",
