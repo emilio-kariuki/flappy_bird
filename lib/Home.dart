@@ -23,8 +23,9 @@ class _HomeState extends State<Home> {
   static double barrierXOne = 1;
   double barrierXTwo = barrierXOne + 1.5;
   static double bXOne = 2;
+  static double bXTwo = bXOne + 2;
 
-  static List<double> barrierX = [bXOne, 3.5];
+  static List<double> barrierX = [bXOne, bXTwo];
   static double barrierWidth = 0.5;
   List<List<double>> barrierHeight = [
     [0.6, 0.4],
@@ -54,6 +55,7 @@ class _HomeState extends State<Home> {
       setState(() {
         birdLocation = initialHeight - height;
         bXOne -= 0.05;
+        bXTwo -= 0.05;
       });
       if (birdIsDead()) {
         timer.cancel();
